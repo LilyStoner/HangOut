@@ -1,0 +1,134 @@
+@font-face {
+    font-family: 'MyFont';
+    src: url('../fonts/1KAwesomeQuote.ttf') format('truetype');
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background-image: url('../img/background.gif');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.bottom-image {
+    position: fixed;
+    /* Đặt ảnh cố định */
+    bottom: -7px;
+    /* Canh sát dưới cùng */
+    left: 50%;
+    /* Canh giữa theo chiều ngang */
+    transform: translateX(-50%);
+    /* Dịch chuyển để ảnh nằm chính giữa */
+    z-index: 10;
+    /* Đảm bảo ảnh nổi lên trên background */
+}
+
+.bottom-image img {
+    filter: brightness(80%);
+    max-width: 300px;
+    /* Kích thước ảnh tùy chỉnh */
+    height: auto;
+    /* Tự động điều chỉnh chiều cao theo tỷ lệ */
+
+}
+
+#text-container {
+    font-family: 'MyFont';
+    margin-left: 50%;
+    padding-top: 4rem;
+    transform: translateX(-50%);
+    top: 10rem;
+    position: relative;
+    text-align: center;
+    font-size: 3.2rem;
+    font-weight: bold;
+    color: #b28eb4;
+    white-space: nowrap;
+}
+
+#text {
+    font-family: 'MyFont';
+    display: inline-block;
+    opacity: 0.7;
+    animation: fadeIn 3s linear forwards;
+}
+
+#buttons {
+    display: none; /* Sử dụng flexbox để căn giữa các nút */
+    left: 50%;
+    top: 10rem;
+    gap: 5rem;
+    transform: translateX(-50%);
+    position: relative;
+    text-align: center;
+    justify-content: center; /* Căn giữa các nút theo chiều ngang */
+    align-items: center; /* Căn giữa các nút theo chiều dọc */
+}
+
+
+
+button {
+    padding: 2rem;
+    width: 7rem;
+    font-family: 'MyFont';
+    font-size: 1.5rem;
+    padding: 0.5rem 1.5rem;
+    margin: 0.5rem;
+    border: 2px solid #b28eb4;
+    border-radius: 10px;
+    background-color: rgba(235, 195, 233, 0.47);
+    color: #b28eb4;
+    cursor: pointer;
+    position: relative;
+}
+
+#yes-button:hover {
+    background-color: #b28eb4;
+    color: #ffffff;
+    transform: scale(1.1);
+    z-index: 200;
+}
+
+#no-button:hover {
+    visibility: hidden; /* Ẩn nút khi hover */
+}
+
+#newButton {
+    cursor: not-allowed;
+}
+
+button:active {
+    background-color: #b28eb4; /* Hiệu ứng khi người dùng nhấn */
+    transform: scale(0.95);  /* Thu nhỏ một chút khi nhấn */
+  }
+
+@media (max-width: 768px) {
+    /* Giảm kích thước chữ và padding cho màn hình nhỏ */
+    #text-container {
+        font-size: 2.8rem;
+        padding: 1rem;
+        top: 11rem;
+        white-space: inherit;
+    }
+
+
+
+    /* Giảm kích thước nút bấm */
+    button {
+        margin-top: 1rem;
+        padding: 1.5rem;
+        width: 6rem;
+        font-size: 1.2rem;
+    }
+
+    .bottom-image img {
+        max-width: 300px;
+    }
+
+    #buttons {
+        gap: 3rem;
+    }
+}
