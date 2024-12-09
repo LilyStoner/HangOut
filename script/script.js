@@ -27,10 +27,10 @@ startButton.addEventListener("click", () => {
   backgroundMusic.muted = false; // Bỏ muted
   backgroundMusic.play(); // Phát nhạc
   backgroundMusic.volume = 0.5; // Đặt âm lượng
+  zoomImage();
 
   // Bắt đầu hiệu ứng chữ và hình ảnh
   setTimeout(() => {
-    zoomImage();
     // Bắt đầu hiệu ứng chữ và hình ảnh
     setTimeout(()=>{
       typeEffect();
