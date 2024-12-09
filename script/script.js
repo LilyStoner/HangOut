@@ -33,8 +33,8 @@ startButton.addEventListener("click", () => {
     // Bắt đầu hiệu ứng chữ và hình ảnh
     setTimeout(()=>{
       typeEffect();
-    zoomImage();
     },5000);
+    zoomImage();
     const moon = document.getElementById("moon");
     moon.classList.add("move-moon");
   }, 5000);
