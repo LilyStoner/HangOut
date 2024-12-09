@@ -9,17 +9,23 @@
 </head>
 
 <body>
-    <div id="text-container">
+    <div id="moon" class="top-image">
+        <img  src="img/Moon.png" alt="moon">
+    </div>
+    <div id="start-container">
+        <button id="start-button">Start</button>
+    </div>
+    <div id="text-container" style="display: none;">
         <span id="text"></span>
     </div>
-    <div id="buttons">
+    <div id="buttons" style="display: none;">
         <button id="yes-button">Dạ</button>
         <button id="no-button">Không</button>
     </div>
-    <div class="bottom-image">
+    <div class="bottom-image" style="display: none;">
         <img id="char" src="img/char.png" alt="Character">
     </div>
-    <audio id="background-music" src="music/music.mp3" autoplay loop>123</audio>
+    <audio id="background-music" src="music/music.mp3" loop></audio>
 
     <script src="script/script.js"></script>
 </body>

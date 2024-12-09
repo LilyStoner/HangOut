@@ -1,10 +1,44 @@
+const startButton = document.getElementById("start-button");
+const textContainer = document.getElementById("text-container");
+const buttons = document.getElementById("buttons");
+const bottomImage = document.querySelector(".bottom-image");
+const backgroundMusic = document.getElementById("background-music");
 const image = document.getElementById("char");
-let scale = 1; // Tỷ lệ ban đầu
-let increasing = true; // Cờ để xác định phóng to hay thu nhỏ
-let vscale = 0.001;
-let check=0;
 
-// Hàm hiệu ứng phóng to/thu nhỏ
+let check=0;
+let scale=1;
+let vscale = 0.001;
+let increasing = true;
+// Khi nhấn nút Start
+startButton.addEventListener("click", () => {
+  // Ẩn nút Start
+  startButton.style.display = "none";
+
+  // Hiển thị các nội dung khác và thêm hiệu ứng fade-in
+  textContainer.style.display = "block";
+  bottomImage.style.display = "block";
+
+  // Thêm lớp fade-in để tạo hiệu ứng mờ dần
+  textContainer.classList.add("fade-in");
+  buttons.classList.add("fade-in");
+  bottomImage.classList.add("fade-in");
+
+  // Phát nhạc nền
+  backgroundMusic.muted = false; // Bỏ muted
+  backgroundMusic.play(); // Phát nhạc
+  backgroundMusic.volume = 0.5; // Đặt âm lượng
+
+  // Bắt đầu hiệu ứng chữ và hình ảnh
+  setTimeout(() => {
+    // Bắt đầu hiệu ứng chữ và hình ảnh
+    setTimeout(()=>{
+      typeEffect();
+    zoomImage();
+    },5000);
+    const moon = document.getElementById("moon");
+    moon.classList.add("move-moon");
+  }, 5000);
+});
 function zoomImage() {
   if (increasing) {
     scale += vscale; // Phóng to
@@ -110,16 +144,3 @@ yesButton.addEventListener('click', () => {
     // Gọi lại hàm typeEffect để bắt đầu lại hiệu ứng
     typeEffect();
 });
-
-const backgroundMusic = document.getElementById("background-music");
-
-// Bỏ muted khi người dùng tương tác
-document.body.addEventListener('click', () => {
-    backgroundMusic.muted = false; // Bỏ tắt tiếng
-    backgroundMusic.volume = 0.5; // Đặt âm lượng
-});
-
-
-// Bắt đầu hiệu ứng gõ chữ
-typeEffect();
-zoomImage();

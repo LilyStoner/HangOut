@@ -3,6 +3,20 @@
     src: url('../fonts/1KAwesomeQuote.ttf') format('truetype');
 }
 
+.fade-in {
+    opacity: 0;
+    animation: fadeInAnimation 1s forwards; /* Hiệu ứng mờ dần trong 1 giây */
+}
+
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -11,6 +25,32 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    overflow: hidden;
+}
+
+#start-container {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%); /* Căn giữa cả theo chiều ngang và dọc */
+}
+
+.top-image {
+    position: absolute;
+    left: -6rem;
+    top: 90%;
+    transition: all 5s ease; 
+    clip-path: inset(0 0 0 0); 
+}
+
+.move-moon {
+    left: -6rem;
+    top: -9%;
+}
+
+.top-image img{
+    filter: opacity(80%);
+    max-width: 22rem;
 }
 
 .bottom-image {
@@ -68,6 +108,13 @@ body {
     align-items: center; /* Căn giữa các nút theo chiều dọc */
 }
 
+#start-button {
+    padding-top:5rem ;
+    height: 25rem;
+    width: 30rem;
+    font-size: 10rem;
+}
+
 
 
 button {
@@ -112,6 +159,15 @@ button:active {
         padding: 1rem;
         top: 11rem;
         white-space: inherit;
+    }
+
+
+
+    #start-button {
+        padding-top:4rem ;
+        height: 15rem;
+        width: 18rem;
+        font-size: 6rem;
     }
 
 
