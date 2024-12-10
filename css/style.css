@@ -62,13 +62,13 @@ body {
     /* Canh giữa theo chiều ngang */
     transform: translateX(-50%);
     /* Dịch chuyển để ảnh nằm chính giữa */
-    z-index: 10;
+    z-index: 1;
     /* Đảm bảo ảnh nổi lên trên background */
 }
 
 .bottom-image img {
     filter: brightness(80%);
-    max-width: 300px;
+    max-width: 20rem;
     /* Kích thước ảnh tùy chỉnh */
     height: auto;
     /* Tự động điều chỉnh chiều cao theo tỷ lệ */
@@ -87,6 +87,7 @@ body {
     font-weight: bold;
     color: #b28eb4;
     white-space: nowrap;
+    z-index: 10;
 }
 
 #text {
@@ -106,6 +107,7 @@ body {
     text-align: center;
     justify-content: center; /* Căn giữa các nút theo chiều ngang */
     align-items: center; /* Căn giữa các nút theo chiều dọc */
+    z-index: 11;
 }
 
 #start-button {
@@ -144,6 +146,7 @@ button {
 }
 
 #newButton {
+    z-index: 20;
     cursor: not-allowed;
 }
 
@@ -152,8 +155,8 @@ button:active {
     transform: scale(0.95);  /* Thu nhỏ một chút khi nhấn */
   }
 
-@media (max-width: 768px) {
-    /* Giảm kích thước chữ và padding cho màn hình nhỏ */
+@media (max-width: 768px) and (max-height: 1024px) {
+    /* Giảm kích thước chữ và padding cho màn hình nhỏ doc */
     #text-container {
         font-size: 2.8rem;
         padding: 1rem;
@@ -181,10 +184,125 @@ button:active {
     }
 
     .bottom-image img {
-        max-width: 300px;
+        max-width: 20rem;
     }
 
     #buttons {
         gap: 3rem;
+    }
+}
+
+@media (max-height: 768px) and (max-width: 1024px) {
+    /* Giảm kích thước chữ và padding cho màn hình nhỏ doc */
+    #text-container {
+        font-size: 2.8rem;
+        padding: 1rem;
+        top: 3rem;
+        white-space: inherit;
+    }
+
+
+
+    #start-button {
+        padding-top:4rem ;
+        height: 15rem;
+        width: 18rem;
+        font-size: 6rem;
+    }
+
+
+
+    /* Giảm kích thước nút bấm */
+    button {
+        margin-top: 1rem;
+        padding: 1.5rem;
+        width: 6rem;
+        font-size: 1.2rem;
+    }
+
+    .bottom-image img {
+        max-width: 15rem;
+    }
+
+    #buttons {
+        top: 3rem;
+        gap: 15rem;
+    }
+}
+
+@media (max-width: 768px) and (max-height: 480px) {
+    /* Giảm kích thước chữ và padding cho màn hình nhỏ ngang */
+    #text-container {
+        font-size: 2.6rem;
+        padding: 1rem;
+        top: 3rem;
+        white-space: inherit;
+    }
+
+
+
+    #start-button {
+        padding-top:4rem ;
+        height: 15rem;
+        width: 18rem;
+        font-size: 6rem;
+    }
+
+
+
+    /* Giảm kích thước nút bấm */
+    button {
+        margin-top: 1rem;
+        padding: 1.5rem;
+        width: 6rem;
+        font-size: 1.2rem;
+    }
+
+    .bottom-image img {
+        max-width: 15rem;
+    }
+
+    #buttons {
+        top: 3rem;
+        gap: 15rem;
+    }
+}
+
+
+@media (max-height: 768px) and (max-width: 480px) {
+    /* Giảm kích thước chữ và padding cho màn hình nhỏ doc */
+    #text-container {
+        font-size: 2.6rem;
+        padding: 1rem;
+        top: 3rem;
+        white-space: inherit;
+    }
+
+
+
+    #start-button {
+        padding-top:4rem ;
+        height: 15rem;
+        width: 18rem;
+        font-size: 6rem;
+    }
+
+
+
+    /* Giảm kích thước nút bấm */
+    button {
+        margin-top: 1rem;
+        padding: 1.5rem;
+        width: 6rem;
+        font-size: 1.2rem;
+    }
+
+    .bottom-image img {
+        max-width: 15rem;
+    }
+
+    #buttons {
+        top: 3rem;
+        gap: 5rem;
     }
 }
