@@ -280,7 +280,7 @@ button:active {
 @media (max-height: 768px) and (max-width: 480px) {
     /* Giảm kích thước chữ và padding cho màn hình nhỏ doc */
     #text-container {
-        font-size: 2.6rem;
+        font-size: 2.3rem;
         padding: 1rem;
         top: 3rem;
         white-space: inherit;
